@@ -5,7 +5,7 @@ Using Unity 2021.1.20f1
 
 StartScene is the one to open first to play the game. Youre a small ship, using directional keys to go forward or rotate to the sides, you cant go back! Press space to fire. Asteroids and enemy ships will spawn periodically. Save your high score!
 
-#Architecture
+# Architecture
 
 I used a new approach for me, an architecture based on factories creating objects from a ModelView and a Controller. The Controller is where the logic resides, and the ModelView is where the Unity GameObject plus the data is. So you can use the prefabs to setup how an object looks and what variables you can change. The factories are based on GenericFactory, which uses generics to have less boilerplate code and show what IModelView and what BaseController the factory will make objects from.
 I also have Providers that act as service locators and instantiators for the various factories and resources from scriptable objects.
