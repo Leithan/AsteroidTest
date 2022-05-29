@@ -62,6 +62,7 @@ public class PlayerModelView : BaseMovableBehaviour, IPlayerModelView
         Controller = PlayerController;
     }
 
+    //This could be improved, as you could have a movement controller independent of the player, and also not inside the modelview
     private void Update()
     {
         if (Input.GetKey(KeyCode.LeftArrow))
