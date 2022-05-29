@@ -17,12 +17,12 @@ public class BulletController : BaseController
         currentTimeToLive -= TimeProvider.DeltaTime;
         if (currentTimeToLive <= 0.0f)
         {
-            modelView.Destroy();
+            OnCollision();
             return;
         }
 
         Vector3 forwardVector = modelView.Rotation * Vector3.up;
-        Vector3 forwardSpeed = forwardVector * modelView.Speed * TimeProvider.DeltaTime;
+        Vector3 forwardSpeed = forwardVector * (modelView.Speed + modelView.ExtraSpeed) * TimeProvider.DeltaTime;
         modelView.Position += forwardSpeed;
         Vector3 pos = CameraHelper.OnOffScreen(modelView.Position, forwardVector);
         modelView.Position = pos;
@@ -30,6 +30,12 @@ public class BulletController : BaseController
 
     public override void OnCollision()
     {
+        Reset();
         modelView.Destroy();
+    }
+
+    private void Reset()
+    {
+        currentTimeToLive = modelView.TimeToLive;
     }
 }

@@ -3,7 +3,8 @@
 public class BulletModelView : BaseMovableBehaviour, IBulletModelView
 {
     [SerializeField] private float timeToLive;
-    private BulletController _controller;
+    public bool Dead { get; set; }
+    public float ExtraSpeed { get; set; }
 
     public float TimeToLive 
     {
@@ -13,6 +14,7 @@ public class BulletModelView : BaseMovableBehaviour, IBulletModelView
 
     public override void Destroy()
     {
-        Destroy(gameObject);
+        Dead = true;
+        gameObject.SetActive(false);
     }
 }
