@@ -19,8 +19,13 @@ Another improvement that would help efficiency is having Object Pools in the fac
 Aprox. times for development :
 
 Overall gameplay : 2hr
+
 Interface and bases for ModelView and Controller : 1hr
+
 Factories : 1hr
+
 UI and highscore : 1hr
+
 Resources and painting : 2hr
+
 Finishing and adding quick object pool : 1hr
