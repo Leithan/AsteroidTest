@@ -14,3 +14,13 @@ GameLogic is the main game logic code. Basically uses a lightweight singleton so
 I think the code is pretty self-explanatory, GameLogic spawns the player ship, asteroids and enemies. Ships spawn bullets. All share a BaseMovableBehaviour (all are IMoveable classes) so when big objects are destroyed,an explosion spawns. Player controls are baked into the PlayerModelView, which is a part that should be improved by having InputControllers decoupled.
 
 Another improvement that would help efficiency is having Object Pools in the factories. Due to time constraints I didnt add them, but for such a slow spawning game, the real world advantage is quite small. Only a quick object pool was added to the bullet factory.
+
+# Time
+Aprox. times for development :
+
+Overall gameplay : 2hr
+Interface and bases for ModelView and Controller : 1hr
+Factories : 1hr
+UI and highscore : 1hr
+Resources and painting : 2hr
+Finishing and adding quick object pool : 1hr
